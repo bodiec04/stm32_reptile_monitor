@@ -12,6 +12,8 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     void setupRTC();
+    void refreshTime();
+    void setAlarm();
 protected:
 };
 

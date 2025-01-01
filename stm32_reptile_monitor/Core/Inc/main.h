@@ -72,7 +72,7 @@ void Error_Handler(void);
 #define MCU_ACTIVE_GPIO_Port GPIOG
 
 /* USER CODE BEGIN Private defines */
-
+extern RTC_HandleTypeDef hrtc;
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

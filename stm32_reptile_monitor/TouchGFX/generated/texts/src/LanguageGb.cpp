@@ -10,5 +10,10 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 // Remap all strings
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
-    0 // T___SINGLEUSE_K9W1: "Setup RTC"
+    17, // T___SINGLEUSE_TKMJ: "Set alarm"
+    37, // T_MINUTES: "New Text"
+    37, // T_HOURS: "New Text"
+    0,  // T_CURRENTTIMETEXT: "<>:<>"
+    4,  // T___SINGLEUSE_2GXD: "Refresh time"
+    27  // T___SINGLEUSE_K9W1: "Setup RTC"
 };

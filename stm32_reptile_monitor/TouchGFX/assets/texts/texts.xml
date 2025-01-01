@@ -6,13 +6,28 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_TKMJ" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Set alarm</Translation>
+      </Text>
+      <Text Id="Minutes" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">New Text</Translation>
+      </Text>
+      <Text Id="Hours" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">New Text</Translation>
+      </Text>
+      <Text Id="currentTimeText" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_2GXD" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Refresh time</Translation>
+      </Text>
       <Text Id="__SingleUse_K9W1" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Setup RTC</Translation>
       </Text>
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>

@@ -7,13 +7,84 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "setupRTCBtn",
-            "X": 103,
-            "Y": 125,
+            "Y": 104,
             "Width": 240,
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
             "TextId": "__SingleUse_K9W1",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "refreshTimeBtn",
+            "X": 18,
+            "Y": 201,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "TextId": "__SingleUse_2GXD",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "currentTimeArea",
+            "X": 279,
+            "Y": 214,
+            "Width": 193,
+            "Height": 24,
+            "TextId": "currentTimeText",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "Hours",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Wildcard2": {
+              "TextId": "Minutes",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "setupAlarmBtn",
+            "X": 240,
+            "Y": 104,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "TextId": "__SingleUse_TKMJ",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -38,6 +109,28 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "setupRTC"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "refreshTimeBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "refreshTime"
+            }
+          },
+          {
+            "InteractionName": "setAlarmIntercation",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "setupAlarmBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "setAlarm"
             }
           }
         ]

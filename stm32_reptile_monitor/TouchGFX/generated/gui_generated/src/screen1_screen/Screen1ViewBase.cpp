@@ -13,13 +13,40 @@ Screen1ViewBase::Screen1ViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    setupRTCBtn.setXY(103, 125);
+    setupRTCBtn.setXY(0, 104);
     setupRTCBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
     setupRTCBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_K9W1));
     setupRTCBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     setupRTCBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     setupRTCBtn.setAction(buttonCallback);
     add(setupRTCBtn);
+
+    refreshTimeBtn.setXY(18, 201);
+    refreshTimeBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
+    refreshTimeBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_2GXD));
+    refreshTimeBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    refreshTimeBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    refreshTimeBtn.setAction(buttonCallback);
+    add(refreshTimeBtn);
+
+    currentTimeArea.setXY(279, 214);
+    currentTimeArea.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    currentTimeArea.setLinespacing(0);
+    touchgfx::Unicode::snprintf(currentTimeAreaBuffer1, CURRENTTIMEAREABUFFER1_SIZE, "%s", touchgfx::TypedText(T_HOURS).getText());
+    currentTimeArea.setWildcard1(currentTimeAreaBuffer1);
+    touchgfx::Unicode::snprintf(currentTimeAreaBuffer2, CURRENTTIMEAREABUFFER2_SIZE, "%s", touchgfx::TypedText(T_MINUTES).getText());
+    currentTimeArea.setWildcard2(currentTimeAreaBuffer2);
+    currentTimeArea.resizeToCurrentText();
+    currentTimeArea.setTypedText(touchgfx::TypedText(T_CURRENTTIMETEXT));
+    add(currentTimeArea);
+
+    setupAlarmBtn.setXY(240, 104);
+    setupAlarmBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
+    setupAlarmBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_TKMJ));
+    setupAlarmBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    setupAlarmBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    setupAlarmBtn.setAction(buttonCallback);
+    add(setupAlarmBtn);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -40,5 +67,19 @@ void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When setupRTCBtn clicked call virtual function
         //Call setupRTC
         setupRTC();
+    }
+    if (&src == &refreshTimeBtn)
+    {
+        //Interaction2
+        //When refreshTimeBtn clicked call virtual function
+        //Call refreshTime
+        refreshTime();
+    }
+    if (&src == &setupAlarmBtn)
+    {
+        //setAlarmIntercation
+        //When setupAlarmBtn clicked call virtual function
+        //Call setAlarm
+        setAlarm();
     }
 }

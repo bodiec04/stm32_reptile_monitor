@@ -9,6 +9,7 @@
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -24,6 +25,14 @@ public:
     {
         // Override and implement this function in Screen1
     }
+    virtual void refreshTime()
+    {
+        // Override and implement this function in Screen1
+    }
+    virtual void setAlarm()
+    {
+        // Override and implement this function in Screen1
+    }
 
 protected:
     FrontendApplication& application() {
@@ -35,6 +44,17 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::ButtonWithLabel setupRTCBtn;
+    touchgfx::ButtonWithLabel refreshTimeBtn;
+    touchgfx::TextAreaWithTwoWildcards currentTimeArea;
+    touchgfx::ButtonWithLabel setupAlarmBtn;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t CURRENTTIMEAREABUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar currentTimeAreaBuffer1[CURRENTTIMEAREABUFFER1_SIZE];
+    static const uint16_t CURRENTTIMEAREABUFFER2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar currentTimeAreaBuffer2[CURRENTTIMEAREABUFFER2_SIZE];
 
 private:
 
